@@ -1,0 +1,9 @@
+---
+extends: default
+rules:
+  # Line length is handled by ansible lint (160 chars)
+  line-length:
+    max: 10000
+  truthy: disable
+  comments:
+    min-spaces-from-content: 1
