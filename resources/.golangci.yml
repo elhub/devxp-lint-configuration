@@ -449,7 +449,7 @@ linters-settings:
       - blank                          # Blank section: contains all blank imports. This section is not present unless explicitly enabled.
       - dot                            # Dot section: contains all dot imports. This section is not present unless explicitly enabled.
       - alias                          # Alias section: contains all alias imports. This section is not present unless explicitly enabled.
-      - localmodule                    # Local module section: contains all local packages. This section is not present unless explicitly enabled.
+      #- localmodule                    # Local module section: contains all local packages. This section is not present unless explicitly enabled.
 
     # Skip generated files.
     # Default: true
@@ -740,7 +740,7 @@ linters-settings:
       const:
         # Define here const type values in format k:v.
         # For example:
-        COMPANY: MY COMPANY
+        COMPANY: Elhub
       regexp:
         # Define here regexp type values.
         # for example:
