@@ -1,0 +1,12 @@
+---
+naming:
+  active: true
+  InvalidPackageDeclaration:
+    active: false
+    rootPackage: ''
+
+
+empty-blocks:
+  active: true
+  EmptyKtFile:
+    active: true
