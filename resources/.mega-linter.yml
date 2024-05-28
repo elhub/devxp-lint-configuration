@@ -1,3 +1,4 @@
+---
 # Default Elhub Configuration file for MegaLinter
 #
 # See all available variables at https://megalinter.io/latest/config-file/ and in
@@ -65,7 +66,3 @@ FILEIO_REPORTER: false
 
 # Uncomment if you want MegaLinter to detect errors but not block CI to pass
 # DISABLE_ERRORS: true
-
-# Prevent prettier from linting YAML files
-JSON_PRETTIER_FILTER_REGEX_EXCLUDE: \.yaml$
-

@@ -8,7 +8,6 @@
   "jsxBracketSameLine": false,
   "jsxSingleQuote": true,
   "printWidth": 60,
-  "parser": "typescript",
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
   "requirePragma": false,

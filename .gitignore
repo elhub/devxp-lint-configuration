@@ -1,3 +1,12 @@
+### Local Lint Files
+.checkmake.ini
+.jsonlintrc
+.golangci.yml
+.markdownlint.json
+.prettierrc.json
+.yamllint.yml
+revive.toml
+
 ### Elhub-Ansible
 **/galaxy/*
 **/inventories/*
