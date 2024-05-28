@@ -65,3 +65,7 @@ SHOW_ELAPSED_TIME: true
 FILEIO_REPORTER: false
 # Uncomment if you want MegaLinter to detect errors but not block CI to pass
 # DISABLE_ERRORS: true
+
+# GOLANGCI_LINT configuration
+GO_GOLANGCI_LINT_CLI_LINT_MODE: project
+GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
