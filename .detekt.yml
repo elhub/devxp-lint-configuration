@@ -1,0 +1,7 @@
+---
+style:
+  active: true
+  MaxLineLength:
+    active: true
+    maxLineLength: 160
+    excludeRawStrings: true
