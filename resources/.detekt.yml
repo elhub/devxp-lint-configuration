@@ -1,12 +1,7 @@
 ---
-naming:
+style:
   active: true
-  InvalidPackageDeclaration:
-    active: false
-    rootPackage: ''
-
-
-empty-blocks:
-  active: true
-  EmptyKtFile:
+  MaxLineLength:
     active: true
+    maxLineLength: 160
+    excludeRawStrings: true

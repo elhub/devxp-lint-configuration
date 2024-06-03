@@ -6,7 +6,7 @@
 
 LINTER_RULES_PATH: https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/
 
-REPORT_OUTPUT_FOLDER: none #set due to https://github.com/oxsecurity/megalinter/issues/1975
+REPORT_OUTPUT_FOLDER: none # Set due to https://github.com/oxsecurity/megalinter/issues/1975
 
 # all, none, or list of linter keys
 APPLY_FIXES: none
