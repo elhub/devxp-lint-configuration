@@ -1,6 +1,8 @@
 .PHONY: all clean test
 
-run:
+all: clean install lint test
+
+build:
 	npx mega-linter-runner
 
 clean:
@@ -9,11 +11,11 @@ clean:
 install: clean
 	npx mega-linter-runner --install
 
-test:
+check:
 	npx mega-linter-runner -r beta
 
 lint:
 	golangci-lint run --config=.golangci.yml ./...
 
-ci_test:
-	cd .teamcity && mvn compile && cd ..
+teamcityCheck:
+	cd .teamcity && mvn teamcity-configs:generate
