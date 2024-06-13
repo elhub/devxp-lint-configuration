@@ -349,3 +349,8 @@ issues:
         - gosec
         - noctx
         - wrapcheck
+    # This disables shadowing warnings for err and ctx variables
+    # https://github.com/golangci/golangci-lint/issues/166
+    - text: 'shadow: declaration of "(err|ctx)" shadows declaration at'
+      linters: [ govet ]
+
