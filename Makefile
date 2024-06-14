@@ -3,16 +3,16 @@
 all: clean install lint test
 
 build:
-	npx mega-linter-runner
+	npm_config_registry=https://jfrog.elhub.cloud/artifactory/api/npm/elhub-npm/; npx mega-linter-runner
 
 clean:
 	rm -rf .checkmake.ini .golangci.yml .jsonlintrc .markdownlint.json .prettierrc.json .yamllint.yml revive.toml
 
 install: clean
-	npx mega-linter-runner --install
+	npm_config_registry=https://jfrog.elhub.cloud/artifactory/api/npm/elhub-npm/; npx mega-linter-runner --install
 
 check:
-	npx mega-linter-runner -r beta
+	npm_config_registry=https://jfrog.elhub.cloud/artifactory/api/npm/elhub-npm/; npx mega-linter-runner -r beta
 
 lint:
 	golangci-lint run --config=.golangci.yml ./...
