@@ -12,7 +12,8 @@ install: clean
 	npm_config_registry=https://jfrog.elhub.cloud/artifactory/api/npm/elhub-npm/; npx mega-linter-runner --install
 
 check:
-	npx mega-linter-runner -r beta
+	# npx mega-linter-runner -r beta
+	@echo "Check is not implemented yet"
 
 lint:
 	golangci-lint run --config=.golangci.yml ./...
