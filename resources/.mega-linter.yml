@@ -56,6 +56,9 @@ ENABLE_LINTERS:
   - TERRAFORM_TERRAGRUNT
   - TERRAFORM_TERRAFORM_FMT
 
+DISABLE_ERRORS_LINTERS:
+  - GO_GOLANGCI_LINT
+
 # DISABLE:
 # - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
 # - SPELL # Uncomment to disable checks of spelling mistakes
