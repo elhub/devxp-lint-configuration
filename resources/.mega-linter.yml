@@ -59,9 +59,9 @@ ENABLE_LINTERS:
 DISABLE_ERRORS_LINTERS:
   - GO_GOLANGCI_LINT
 
-# DISABLE:
+DISABLE:
+  - SPELL # Uncomment to disable checks of spelling mistakes
 # - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
-# - SPELL # Uncomment to disable checks of spelling mistakes
 
 SHOW_ELAPSED_TIME: true
 
