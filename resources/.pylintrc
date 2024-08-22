@@ -1,0 +1,5 @@
+[MESSAGES CONTROL]
+disable=E0401 # pylint: Unable to import 'module'. Fails for virtualenvs
+
+[FORMAT]
+max-line-length=160

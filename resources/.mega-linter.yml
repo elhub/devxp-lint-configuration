@@ -18,43 +18,43 @@ APPLY_FIXES: none
 # If you use ENABLE_LINTERS variable, all other linters will be disabled by
 # default
 ENABLE_LINTERS:
+  - ANSIBLE_ANSIBLE_LINT
   - BASH_EXEC
   - BASH_SHELLCHECK
+  - CSS_STYLELINT
+  - ENV_DOTENV_LINTER
   - GO_GOLANGCI_LINT
   - GO_REVIVE
+  - HTML_HTMLHINT
   - JAVA_CHECKSTYLE
   - JAVA_PMD
   - JAVASCRIPT_ES
-  - JAVASCRIPT_STANDARD
   - JAVASCRIPT_PRETTIER
-  - KOTLIN_KTLINT
+  - JAVASCRIPT_STANDARD
+  - JSON_JSONLINT
+  - JSON_PRETTIER
   - KOTLIN_DETEKT
+  - KOTLIN_KTLINT
   - MAKEFILE_CHECKMAKE
+  - MARKDOWN_MARKDOWNLINT
   - POWERSHELL_POWERSHELL
   - POWERSHELL_POWERSHELL_FORMATTER
-  - PYTHON_PYLINT
   - PYTHON_BLACK
   - PYTHON_FLAKE8
+  - PYTHON_PYLINT
   - SQL_SQL_LINT
   - SQL_SQLFLUFF
   - SQL_TSQLLINT
+  - TERRAFORM_TERRAFORM_FMT
+  - TERRAFORM_TERRAGRUNT
+  - TERRAFORM_TERRASCAN
+  - TERRAFORM_TFLINT
   - TYPESCRIPT_ES
-  - TYPESCRIPT_STANDARD
   - TYPESCRIPT_PRETTIER
-  - CSS_STYLELINT
-  - ENV_DOTENV_LINTER
-  - HTML_HTMLHINT
-  - JSON_JSONLINT
-  - JSON_PRETTIER
-  - MARKDOWN_MARKDOWNLINT
+  - TYPESCRIPT_STANDARD
   - XML_XMLLINT
   - YAML_PRETTIER
   - YAML_YAMLLINT
-  - ANSIBLE_ANSIBLE_LINT
-  - TERRAFORM_TFLINT
-  - TERRAFORM_TERRASCAN
-  - TERRAFORM_TERRAGRUNT
-  - TERRAFORM_TERRAFORM_FMT
 
 DISABLE_ERRORS_LINTERS:
   - GO_GOLANGCI_LINT
@@ -73,5 +73,13 @@ FILEIO_REPORTER: false
 GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
 
 # KOTLIN_DETEKT configuration
-KOTLIN_DETEKT_PRE_COMMANDS: [command: "wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.detekt.yml -O /tmp/.detekt.yml"]
-KOTLIN_DETEKT_ARGUMENTS: ["--build-upon-default-config", "--config", "/tmp/.detekt.yml"]
+KOTLIN_DETEKT_PRE_COMMANDS:
+  [
+    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.detekt.yml -O /tmp/.detekt.yml'
+  ]
+KOTLIN_DETEKT_ARGUMENTS:
+  [
+    '--build-upon-default-config',
+    '--config',
+    '/tmp/.detekt.yml'
+  ]
