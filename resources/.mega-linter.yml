@@ -39,7 +39,7 @@ ENABLE_LINTERS:
   - MARKDOWN_MARKDOWNLINT
   - POWERSHELL_POWERSHELL
   - POWERSHELL_POWERSHELL_FORMATTER
-  #- PYTHON_BLACK - Auto-fix linter. We need to create a good way to auto-apply fixes before using this.
+  - PYTHON_BLACK
   - PYTHON_FLAKE8
   - PYTHON_PYLINT
   - SQL_SQL_LINT
