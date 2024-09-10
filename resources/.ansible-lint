@@ -6,3 +6,4 @@ skip_list:
   - '208' # Missing file permissions
   - "305" # Ignore shell for wildcard delete
   - '306' # Pipefail has issues https://github.com/ansible/ansible-lint/issues/497
+  - 'name[template]' # Don't require jinga templates to be at the end of a name
