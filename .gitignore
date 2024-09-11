@@ -13,6 +13,10 @@
 .yamllint.yml
 pyproject.toml
 revive.toml
+.ansible-lint
+.flake8
+.pylintrc
+pyproject.toml
 
 ### Ansible ###
 **/galaxy/*
