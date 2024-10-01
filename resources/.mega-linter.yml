@@ -83,3 +83,8 @@ KOTLIN_DETEKT_ARGUMENTS:
     '--config',
     '/tmp/.detekt.yml'
   ]
+
+KOTLIN_KTLINT_ARGUMENTS:
+  [
+    '--editorconfig=.ktlint_editorconfig'
+  ]
