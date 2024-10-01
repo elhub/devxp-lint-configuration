@@ -91,5 +91,5 @@ KOTLIN_KTLINT_PRE_COMMANDS:
 
 KOTLIN_KTLINT_ARGUMENTS:
   [
-    '--editorconfig=.ktlint_editorconfig'
+    '--editorconfig=/tmp/.ktlint_editorconfig'
   ]
