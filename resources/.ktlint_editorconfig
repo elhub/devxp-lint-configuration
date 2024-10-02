@@ -5,3 +5,5 @@ ktlint_standard = enabled
 ktlint_standard_multiline-expression-wrapping = disabled
 ktlint_standard_string-template-indent = disabled
 ktlint_standard_chain-method-continuation = disabled
+ktlint_standard_class-signature = disabled
+ktlint_standard_trailing-comma-on-call-site = disabled
