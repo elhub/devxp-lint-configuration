@@ -10,3 +10,5 @@ ktlint_standard_trailing-comma-on-call-site = disabled
 ktlint_standard_function-signature = disabled
 ktlint_standard_trailing-comma-on-declaration-site = disabled
 ktlint_standard_if-else-wrapping = disabled
+ktlint_standard_multiline-if-else = disabled
+ktlint_standard_statement-wrapping = disabled
