@@ -14,3 +14,6 @@ ktlint_standard_trailing-comma-on-declaration-site = disabled
 # Can't find a more specific rule to disable.
 ktlint_standard_function-signature = disabled
 ktlint_standard_class-signature = disabled
+
+# This ends up correcting to something that intellij auto-formats back
+ktlint_standard_condition_wrapping = disabled
