@@ -86,7 +86,7 @@ KOTLIN_DETEKT_ARGUMENTS:
 
 KOTLIN_KTLINT_PRE_COMMANDS:
   [
-    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/test-ktlint-config/resources/.ktlint_editorconfig -O /tmp/.ktlint_editorconfig'
+    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.ktlint_editorconfig -O /tmp/.ktlint_editorconfig'
   ]
 
 KOTLIN_KTLINT_ARGUMENTS:
