@@ -81,7 +81,7 @@ KOTLIN_DETEKT_ARGUMENTS:
   [
     '--build-upon-default-config',
     '--config',
-    '/tmp/.detekt.yml'
+    '.detekt.yml'
   ]
 
 KOTLIN_KTLINT_PRE_COMMANDS:

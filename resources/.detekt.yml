@@ -1,7 +1,12 @@
 ---
 style:
   active: true
+
   MaxLineLength:
     active: true
     maxLineLength: 160
     excludeRawStrings: true
+
+  ReturnCount:
+    active: true
+    max: 100
