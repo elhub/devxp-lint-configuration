@@ -75,13 +75,13 @@ GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
 # KOTLIN_DETEKT configuration
 KOTLIN_DETEKT_PRE_COMMANDS:
   [
-    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/test-detekt/resources/.detekt.yml -O /tmp/.detekt.yml'
+    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.detekt.yml -O /tmp/.detekt.yml'
   ]
 KOTLIN_DETEKT_ARGUMENTS:
   [
     '--build-upon-default-config',
     '--config',
-    '/tmp/.detekt.yml'
+    '.detekt.yml'
   ]
 
 KOTLIN_KTLINT_PRE_COMMANDS:
