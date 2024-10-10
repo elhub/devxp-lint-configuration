@@ -6,3 +6,7 @@ style:
     active: true
     maxLineLength: 160
     excludeRawStrings: true
+
+  ReturnCount:
+    active: true
+    max: 100
