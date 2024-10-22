@@ -1,6 +1,6 @@
 {
   "comments": true,
-  "compact": true,
+  "compact": true
   "continue": true,
   "patterns": ["**/*.json", "!**/node_modules"]
 }
