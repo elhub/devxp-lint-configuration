@@ -5,9 +5,7 @@ import no.elhub.devxp.build.configuration.pipeline.jobs.makeVerify
 elhubProject(DEVXP, "devxp-lint-configuration") {
     pipeline {
         sequential {
-            makeVerify {
-                disableSonarScan = true
-            }
+            makeVerify()
         }
     }
 }
