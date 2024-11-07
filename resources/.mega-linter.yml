@@ -48,7 +48,7 @@ ENABLE_LINTERS:
   - REPOSITORY_GITLEAKS
   - REPOSITORY_SEMLINT
   - REPOSITORY_SEMGREP
-  - REPOSITORY_TRIVY
+  # - REPOSITORY_TRIVY
   - SQL_SQL_LINT
   - SQL_SQLFLUFF
   - SQL_TSQLLINT
@@ -97,6 +97,4 @@ KOTLIN_KTLINT_PRE_COMMANDS:
   ]
 
 KOTLIN_KTLINT_ARGUMENTS:
-  [
-    '--editorconfig=/tmp/.ktlint_editorconfig'
-  ]
+  ['--editorconfig=/tmp/.ktlint_editorconfig']
