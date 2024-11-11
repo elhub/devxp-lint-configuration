@@ -98,5 +98,4 @@ KOTLIN_KTLINT_PRE_COMMANDS:
 
 KOTLIN_KTLINT_ARGUMENTS:
   ['--editorconfig=/tmp/.ktlint_editorconfig']
-
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
