@@ -46,7 +46,7 @@ ENABLE_LINTERS:
   - PYTHON_PYLINT
   - REPOSITORY_GIT_DIFF
   - REPOSITORY_GITLEAKS
-  - REPOSITORY_SEMLINT
+  - REPOSITORY_SECRETLINT
   #- REPOSITORY_SEMGREP
   #- REPOSITORY_TRIVY
   - SQL_SQL_LINT
@@ -76,6 +76,11 @@ FILEIO_REPORTER: false
 # Uncomment if you want MegaLinter to detect errors but not block CI to pass
 # DISABLE_ERRORS: true
 
+# Ensure EditorConfig is up to date
+PRE_COMMANDS:
+  - command: 'wget https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -O ./.editorconfig'
+    cwd: workspace
+
 # GOLANGCI_LINT configuration
 GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
 
@@ -93,9 +98,10 @@ KOTLIN_DETEKT_ARGUMENTS:
 
 KOTLIN_KTLINT_PRE_COMMANDS:
   [
-    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.ktlint_editorconfig -O /tmp/.ktlint_editorconfig'
+    command: 'wget https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -O /tmp/.ktlint_editorconfig'
   ]
 
 KOTLIN_KTLINT_ARGUMENTS:
   ['--editorconfig=/tmp/.ktlint_editorconfig']
+
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
