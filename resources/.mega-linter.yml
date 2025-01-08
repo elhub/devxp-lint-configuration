@@ -4,7 +4,7 @@
 # See all available variables at https://megalinter.io/latest/config-file/ and in
 # linters documentation
 
-LINTER_RULES_PATH: https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/
+LINTER_RULES_PATH: https://raw.githubusercontent.com/elhub/devxp-lint-configuration/test-java-linting/resources/
 
 REPORT_OUTPUT_FOLDER: none # Set due to https://github.com/oxsecurity/megalinter/issues/1975
 
@@ -78,30 +78,35 @@ FILEIO_REPORTER: false
 
 # Ensure EditorConfig is up to date
 PRE_COMMANDS:
-  - command: 'wget https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -O ./.editorconfig'
+  - command: "wget https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -O ./.editorconfig"
     cwd: workspace
 
 # GOLANGCI_LINT configuration
-GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
+GO_GOLANGCI_LINT_ARGUMENTS: ["run", "./..."]
 
 # KOTLIN_DETEKT configuration
 KOTLIN_DETEKT_PRE_COMMANDS:
   [
-    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.detekt.yml -O /tmp/.detekt.yml'
+    command: "wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.detekt.yml -O /tmp/.detekt.yml",
   ]
 KOTLIN_DETEKT_ARGUMENTS:
-  [
-    '--build-upon-default-config',
-    '--config',
-    '/tmp/.detekt.yml'
-  ]
+  ["--build-upon-default-config", "--config", "/tmp/.detekt.yml"]
 
 KOTLIN_KTLINT_PRE_COMMANDS:
   [
-    command: 'wget https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -O /tmp/.ktlint_editorconfig'
+    command: "wget https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -O /tmp/.ktlint_editorconfig",
   ]
 
-KOTLIN_KTLINT_ARGUMENTS:
-  ['--editorconfig=/tmp/.ktlint_editorconfig']
+KOTLIN_KTLINT_ARGUMENTS: ["--editorconfig=/tmp/.ktlint_editorconfig"]
 
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
+JAVA_CHECKSTYLE_PRE_COMMANDS:
+  [
+    command: "wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/test-java-linting/resources/checkstyle-config.xml -O /tmp/checkstyle-config.xml",
+  ]
+JAVA_CHECKSTYLE_CONFIG_FILE: "checkstyle-config.xml"
+
+JAVA_PMD_PRE_COMMANDS:
+  [
+    command: "wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/test-java-linting/resources/java-pmd-ruleset.xml -O /tmp/java-pmd-ruleset.xml",
+  ]
