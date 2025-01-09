@@ -105,3 +105,13 @@ KOTLIN_KTLINT_ARGUMENTS:
   ['--editorconfig=/tmp/.ktlint_editorconfig']
 
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
+JAVA_CHECKSTYLE_PRE_COMMANDS:
+  [
+    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/checkstyle-config.xml -O /tmp/checkstyle-config.xml'
+  ]
+JAVA_CHECKSTYLE_CONFIG_FILE: 'checkstyle-config.xml'
+
+JAVA_PMD_PRE_COMMANDS:
+  [
+    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/java-pmd-ruleset.xml -O /tmp/java-pmd-ruleset.xml'
+  ]
