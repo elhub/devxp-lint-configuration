@@ -47,8 +47,8 @@ ENABLE_LINTERS:
   - REPOSITORY_GIT_DIFF
   - REPOSITORY_GITLEAKS
   - REPOSITORY_SECRETLINT
-  #- REPOSITORY_SEMGREP
-  #- REPOSITORY_TRIVY
+# - REPOSITORY_SEMGREP
+# - REPOSITORY_TRIVY
   - SQL_SQL_LINT
   - SQL_SQLFLUFF
   - SQL_TSQLLINT
@@ -78,7 +78,7 @@ FILEIO_REPORTER: false
 
 # Ensure EditorConfig is up to date
 PRE_COMMANDS:
-  - command: 'wget https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -O ./.editorconfig'
+  - command: 'curl https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -o ./.editorconfig'
     cwd: workspace
 
 # GOLANGCI_LINT configuration
@@ -87,7 +87,7 @@ GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
 # KOTLIN_DETEKT configuration
 KOTLIN_DETEKT_PRE_COMMANDS:
   [
-    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.detekt.yml -O /tmp/.detekt.yml'
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.detekt.yml -o /tmp/.detekt.yml'
   ]
 KOTLIN_DETEKT_ARGUMENTS:
   [
@@ -98,7 +98,7 @@ KOTLIN_DETEKT_ARGUMENTS:
 
 KOTLIN_KTLINT_PRE_COMMANDS:
   [
-    command: 'wget https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -O /tmp/.ktlint_editorconfig'
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -o /tmp/.ktlint_editorconfig'
   ]
 
 KOTLIN_KTLINT_ARGUMENTS:
@@ -107,11 +107,11 @@ KOTLIN_KTLINT_ARGUMENTS:
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
 JAVA_CHECKSTYLE_PRE_COMMANDS:
   [
-    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/checkstyle-config.xml -O /tmp/checkstyle-config.xml'
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/checkstyle-config.xml -o /tmp/checkstyle-config.xml'
   ]
 JAVA_CHECKSTYLE_CONFIG_FILE: 'checkstyle-config.xml'
 
 JAVA_PMD_PRE_COMMANDS:
   [
-    command: 'wget https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/java-pmd-ruleset.xml -O /tmp/java-pmd-ruleset.xml'
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/java-pmd-ruleset.xml -o /tmp/java-pmd-ruleset.xml'
   ]
