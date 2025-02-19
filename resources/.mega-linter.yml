@@ -107,9 +107,9 @@ KOTLIN_KTLINT_ARGUMENTS:
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
 JAVA_CHECKSTYLE_PRE_COMMANDS:
   [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/checkstyle-config.xml -o checkstyle-config.xml'
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/checkstyle-config.xml -o /tmp/checkstyle-config.xml'
   ]
-JAVA_CHECKSTYLE_CONFIG_FILE: 'checkstyle-config.xml'
+JAVA_CHECKSTYLE_CONFIG_FILE: '/tmp/checkstyle-config.xml'
 
 JAVA_PMD_PRE_COMMANDS:
   [
