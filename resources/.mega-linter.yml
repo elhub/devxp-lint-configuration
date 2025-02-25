@@ -109,7 +109,7 @@ JAVA_CHECKSTYLE_PRE_COMMANDS:
   [
     command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/checkstyle-config.xml -o /tmp/checkstyle-config.xml'
   ]
-JAVA_CHECKSTYLE_CONFIG_FILE: 'checkstyle-config.xml'
+JAVA_CHECKSTYLE_ARGUMENTS: -c /tmp/checkstyle-config.xml
 
 JAVA_PMD_PRE_COMMANDS:
   [
