@@ -4,7 +4,7 @@
   "IgnoreDefaults": false,
   "SpacesAfterTabs": false,
   "NoColor": false,
-  "Exclude": ["gradlew","gradlew.bat"],
+  "Exclude": [],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {
