@@ -49,6 +49,7 @@ ENABLE_LINTERS:
   - REPOSITORY_SECRETLINT
 # - REPOSITORY_SEMGREP
 # - REPOSITORY_TRIVY
+  - API_SPECTRAL
   - SQL_SQL_LINT
   - SQL_SQLFLUFF
   - SQL_TSQLLINT
@@ -115,3 +116,6 @@ JAVA_PMD_PRE_COMMANDS:
   [
     command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/java-pmd-ruleset.xml -o /tmp/java-pmd-ruleset.xml'
   ]
+
+API_SPECTRAL_FILE_NAMES_REGEX:
+  - '^openapi\.yaml$'
