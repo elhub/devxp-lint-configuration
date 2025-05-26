@@ -16,3 +16,8 @@
     "MaxLineLength": true
   }
 }
+{
+    "exclude": [
+    "**/gradlew.bat"
+    ]
+}
