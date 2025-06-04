@@ -5,3 +5,15 @@ style:
     active: true
     maxLineLength: 160
     excludeRawStrings: true
+
+complexity:
+  active: true
+  TooManyFunctions:
+    active: true
+    threshold: 20
+  LongMethod:
+    active: true
+    threshold: 120
+  LongParameterList:
+    active: true
+    threshold: 8
