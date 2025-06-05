@@ -10,7 +10,8 @@ complexity:
   active: true
   TooManyFunctions:
     active: true
-    threshold: 20
+    functionThreshold: 20
+    constructorThreshold: 20
   LongMethod:
     active: true
     threshold: 120
