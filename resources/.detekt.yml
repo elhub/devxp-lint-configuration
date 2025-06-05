@@ -10,11 +10,11 @@ complexity:
   active: true
   TooManyFunctions:
     active: true
-    functionThreshold: 20
-    constructorThreshold: 20
+    thresholdInFiles: 20
   LongMethod:
     active: true
-    threshold: 120
+    functionThreshold: 120
+    constructorThreshold: 120
   LongParameterList:
     active: true
     threshold: 8
