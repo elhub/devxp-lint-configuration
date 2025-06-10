@@ -13,8 +13,7 @@ complexity:
     thresholdInFiles: 20
   LongMethod:
     active: true
-    functionThreshold: 120
-    constructorThreshold: 120
+    threshold: 120
   LongParameterList:
     active: true
     threshold: 8
