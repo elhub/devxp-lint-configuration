@@ -97,7 +97,7 @@ KOTLIN_DETEKT_ARGUMENTS:
 
 KOTLIN_KTLINT_PRE_COMMANDS:
   [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -o /tmp/.ktlint_editorconfig'
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/refs/heads/main/resources/.ktlint_editorconfig -o /tmp/.ktlint_editorconfig'
   ]
 
 KOTLIN_KTLINT_ARGUMENTS:
