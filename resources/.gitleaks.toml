@@ -14,3 +14,6 @@ useDefault = true
     '''(.*?)gitleaks\.toml$''',
     '''(?i)(.*?)(png|jpeg|jpg|gif|doc|docx|pdf|bin|xls|xlsx|pyc|zip)$''',
     '''(go.mod|go.sum)$''']
+    regexes = [
+      '''credentialsJSON:[a-zA-Z0-9]+'''
+    ]
