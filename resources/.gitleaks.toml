@@ -1,6 +1,6 @@
 title = "gitleaks config"
 
-[allowlist]
+[allowlists]
 paths = [
   "**/*"  # This glob pattern matches all files
 ]
