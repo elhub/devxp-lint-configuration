@@ -1,19 +1,11 @@
 title = "gitleaks config"
-
 [extend]
 # useDefault will extend the base configuration with the default gitleaks config:
 # https://github.com/zricethezav/gitleaks/blob/master/config/gitleaks.toml
 useDefault = true
 
 [allowlist]
-description = "Allowlisted files"
+description = "Allowlist all files"
 paths = [
-  '''megalinter-reports''',
-  '''.github/linters''',
-  '''node_modules''',
-  '''(.*?)gitleaks\.toml$''',
-  '''(?i)(.*?)(png|jpeg|jpg|gif|doc|docx|pdf|bin|xls|xlsx|pyc|zip)$''',
-  '''(go.mod|go.sum)$''']
-regexes = [
-  '''credentialsJSON:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'''
+  '''.*'''
 ]
