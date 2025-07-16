@@ -81,7 +81,16 @@ PRE_COMMANDS:
     cwd: workspace
 
 # FLAKE8 configuration
-PYTHON_FLAKE8_ARGUMENTS: ['--max-line-length=160']
+PYTHON_FLAKE8_PRE_COMMANDS:
+  [
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.flake8 -o /tmp/.flake8'
+  ]
+
+PYTHON_FLAKE8_ARGUMENTS:
+  [
+    "--config",
+    "/tmp/.flake8"
+  ]
 
 # GOLANGCI_LINT configuration
 GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
