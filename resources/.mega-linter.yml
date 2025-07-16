@@ -86,11 +86,14 @@ PYTHON_FLAKE8_PRE_COMMANDS:
     command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.flake8 -o /tmp/.flake8'
   ]
 
-PYTHON_FLAKE8_ARGUMENTS:
+PYTHON_FLAKE8_ARGUMENTS: ['--config', '/tmp/.flake8']
+
+PYTHON_PYLINT_PRE_COMMANDS:
   [
-    "--config",
-    "/tmp/.flake8"
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.pylintrc -o /tmp/.pylintrc'
   ]
+
+PYTHON_PYLINT_ARGUMENTS: ['--rcfile', '/tmp/.pylintrc']
 
 # GOLANGCI_LINT configuration
 GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
