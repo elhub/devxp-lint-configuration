@@ -48,8 +48,8 @@ ENABLE_LINTERS:
   - REPOSITORY_GIT_DIFF
   - REPOSITORY_GITLEAKS
   - REPOSITORY_SECRETLINT
-# - REPOSITORY_SEMGREP
-# - REPOSITORY_TRIVY
+  # - REPOSITORY_SEMGREP
+  # - REPOSITORY_TRIVY
   - SQL_SQLFLUFF
   - TERRAFORM_TERRAFORM_FMT
   - TERRAFORM_TERRAGRUNT
@@ -79,6 +79,18 @@ FILEIO_REPORTER: false
 PRE_COMMANDS:
   - command: 'curl https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -o ./.editorconfig'
     cwd: workspace
+
+# FLAKE8 configuration
+PYTHON_FLAKE8_PRE_COMMANDS:
+  [
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.flake8 -o /tmp/.flake8'
+  ]
+
+PYTHON_FLAKE8_ARGUMENTS:
+  [
+    "--config",
+    "/tmp/.flake8"
+  ]
 
 # GOLANGCI_LINT configuration
 GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
