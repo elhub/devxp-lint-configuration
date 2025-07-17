@@ -95,6 +95,13 @@ PYTHON_PYLINT_PRE_COMMANDS:
 
 PYTHON_PYLINT_ARGUMENTS: ['--rcfile', '/tmp/.pylintrc']
 
+PYTHON_BLACK_PRE_COMMANDS:
+  [
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/pyproject.toml -o /tmp/pyproject.toml'
+  ]
+
+PYTHON_BLACK_ARGUMENTS: ['--config', '/tmp/pyproject.toml']
+
 # GOLANGCI_LINT configuration
 GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
 
