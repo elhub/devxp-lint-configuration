@@ -1,6 +1,7 @@
 [flake8]
 max-line-length = 160
 
-# Ignore formatting conflict for slices between flake8 and black:
+# E203: Ignore formatting conflict for slices between flake8 and black:
 # https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#slices
-ignore = E203
+# W503: line break before binary operator
+ignore = E203,W503
