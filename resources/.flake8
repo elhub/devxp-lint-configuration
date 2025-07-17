@@ -3,5 +3,5 @@ max-line-length = 160
 
 # E203: Ignore formatting conflict for slices between flake8 and black:
 # https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#slices
-# W503: line break before binary operator
+# W503: line break before binary operator. W503 and W504 are mutually exclusive.
 ignore = E203,W503
