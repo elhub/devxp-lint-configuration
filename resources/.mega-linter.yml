@@ -4,7 +4,7 @@
 # See all available variables at https://megalinter.io/latest/config-file/ and in
 # linters documentation
 
-LINTER_RULES_PATH: https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/
+LINTER_RULES_PATH: https://github.com/elhub/devxp-lint-configuration/tree/test/test-pr-for-gitleaks/resources
 
 REPORT_OUTPUT_FOLDER: none # Set due to https://github.com/oxsecurity/megalinter/issues/1975
 
@@ -46,7 +46,7 @@ ENABLE_LINTERS:
   - PYTHON_FLAKE8
   - PYTHON_PYLINT
   - REPOSITORY_GIT_DIFF
-  - REPOSITORY_GITLEAKS
+#  - REPOSITORY_GITLEAKS
   - REPOSITORY_SECRETLINT
   # - REPOSITORY_SEMGREP
   # - REPOSITORY_TRIVY
@@ -119,7 +119,7 @@ KOTLIN_DETEKT_ARGUMENTS:
 
 KOTLIN_KTLINT_PRE_COMMANDS:
   [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/refs/heads/main/resources/.ktlint_editorconfig -o /tmp/.ktlint_editorconfig'
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/refs/heads/test/test-pr-for-gitleaks/resources/.ktlint_editorconfig -o /tmp/.ktlint_editorconfig'
   ]
 
 KOTLIN_KTLINT_ARGUMENTS:
