@@ -137,5 +137,10 @@ JAVA_PMD_PRE_COMMANDS:
     command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/java-pmd-ruleset.xml -o /tmp/java-pmd-ruleset.xml'
   ]
 
+GIT_GIT_DIFF_PRE_COMMANDS:
+  [
+    command: 'echo zzzzz && pwd && ls -la && echo zzzzz'
+  ]
+
 API_SPECTRAL_FILE_NAMES_REGEX:
   - '^openapi\.yaml$'
