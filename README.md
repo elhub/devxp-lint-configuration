@@ -1,8 +1,5 @@
-# devxp-linter-configurations
+# 🧼 devxp-linter-configurations 🧼
 
-[<img src="https://img.shields.io/badge/repo-github-blue" alt="">](https://github.com/elhub/devxp-lint-configuration)
-[<img src="https://img.shields.io/badge/issues-jira-orange" alt="">](https://jira.elhub.cloud/issues/?jql=component%20%3D%20devxp-lint-configuration%20AND%20status%20!%3D%20Done)
-[<img src="https://teamcity.elhub.cloud/app/rest/builds/buildType:(id:DevXpLinterConfiguration_AutoRelease)/statusIcon" alt="">](https://teamcity.elhub.cloud/project/DevxpLintConfiguration?mode=builds#all-projects)
 
 ## About
 
