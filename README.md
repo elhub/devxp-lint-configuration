@@ -1,4 +1,4 @@
-# devxp-linter-configurations
+# 🧼 devxp-linter-configurations 🧼
 
 ## About
 
