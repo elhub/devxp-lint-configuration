@@ -1,11 +1,19 @@
+import no.elhub.devxp.build.configuration.pipeline.ElhubProject.Companion.elhubProject
 import no.elhub.devxp.build.configuration.pipeline.constants.Group.DEVXP
-import no.elhub.devxp.build.configuration.pipeline.dsl.elhubProject
 import no.elhub.devxp.build.configuration.pipeline.jobs.makeVerify
 
-elhubProject(DEVXP, "devxp-lint-configuration") {
+elhubProject(DEVXP, "devxp-project-template") {
     pipeline {
         sequential {
-            makeVerify()
+            makeVerify {
+                sonarScanSettings = {
+                    sonarProjectSources = "resources/,Makefile"
+                }
+                enablePublishMetrics = true
+                publishMetricsSettings = {
+                    skipCodeCoverage = true
+                }
+            }
         }
     }
 }

@@ -1,22 +1,20 @@
-.PHONY: all clean test
+# Phony targets
+.PHONY: all build check clean teamcity-check
 
-all: clean install lint test
+# Default target
+all: build
 
+# Target: dummy
 build:
-	echo 'true'
+	@echo "make build"
 
-clean:
-	rm -rf .checkmake.ini .golangci.yml .jsonlintrc .markdownlint.json .prettierrc.json .yamllint.yml revive.toml
-
-install: clean
-	npm_config_registry=https://jfrog.elhub.cloud/artifactory/api/npm/elhub-npm/; npx mega-linter-runner --install
-
+# Target: dummy
 check:
-	# npx mega-linter-runner -r beta
-	@echo "Check is not implemented yet"
+	@echo "make check"
 
-lint:
-	golangci-lint run --config=.golangci.yml ./...
+# Target: dummy
+clean:
+	@echo "make clean"
 
-teamcityCheck:
+teamcity-check:
 	cd .teamcity && mvn teamcity-configs:generate
