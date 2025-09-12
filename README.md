@@ -1,6 +1,5 @@
 # 🧼 devxp-linter-configurations 🧼
 
-
 ## About
 
 This project contains configurations for development linting, suitable for use with [MegaLinter](https://github.com/oxsecurity/megalinter).
