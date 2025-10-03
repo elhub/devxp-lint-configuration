@@ -11,8 +11,8 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
         sequential {
             val prepareFilesForSonarJob = customJob(
                 AgentScope.LinuxAgentContext,
-                buildArtifactRules = listOf(ArtifactRule.include("resources-sonar-temp", "resources-sonar-temp.zip")),
-                outputArtifactRules = listOf(ArtifactRule.include("resources-sonar-temp.zip", "resources-sonar-temp"))
+                buildArtifactRules = listOf(ArtifactRule.include("dotfiles", "dotfiles.zip")),
+                outputArtifactRules = listOf(ArtifactRule.include("dotfiles.zip", "dotfiles"))
             ) {
                 id("PrepareFilesForSonar")
                 name = "\uD83D\uDCC4 Prepare dotfiles for SonarScan"
@@ -22,7 +22,8 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
                         name = "Copy files into a temporary location"
                         scriptContent = """
                             |#!/bin/bash
-                            |cp -R resources resources-sonar-temp
+                            |mkdir dotfiles
+                            |cp resources/.* -t dotfiles/ || echo "Ignoring errors for copy"
                         """.trimMargin()
                         workingDir = "."
                     }
@@ -36,16 +37,16 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
                             |  fi
                             |done
                         """.trimMargin()
-                        workingDir = "resources-sonar-temp"
+                        workingDir = "dotfiles"
                     }
                 }
             }
 
             makeVerify {
-                buildArtifactRules = listOf(ArtifactRule.include("resources-sonar-temp.zip"))
+                buildArtifactRules = listOf(ArtifactRule.include("dotfiles.zip"))
 
                 sonarScanSettings = {
-                    sonarProjectSources = "resources-sonar-temp/"
+                    sonarProjectSources = "resources/,dotfiles/,Makefile"
                     sonarProjectTests = "tests/"
                     additionalParams =
                         mutableListOf(
@@ -58,8 +59,8 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
                     outputArtifactRules = listOf(
                         ArtifactRule(
                             include = true,
-                            src = "resources-sonar-temp.zip!**",
-                            dst = "resources-sonar-temp"
+                            src = "dotfiles.zip!**",
+                            dst = "dotfiles"
                         )
                     )
                 }
@@ -72,7 +73,7 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
                 this.buildType.dependencies {
                     artifacts(buildTypeId = prepareFilesForSonarJob.id) {
                         buildRule = lastFinished("%teamcity.build.branch%")
-                        rules =  listOf(ArtifactRule.include("resources-sonar-temp.zip"))
+                        rules =  listOf(ArtifactRule.include("dotfiles.zip"))
                         cleanDestination = false
                     }
                 }
