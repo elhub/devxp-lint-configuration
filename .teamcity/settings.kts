@@ -15,16 +15,14 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
                 outputArtifactRules = listOf(ArtifactRule.include("resources-sonar-temp.zip", "resources-sonar-temp"))
             ) {
                 id("PrepareFilesForSonar")
-                name = "Prepare dot files for sonar scan"
+                name = "\uD83D\uDCC4 Prepare dotfiles for SonarScan"
 
                 steps {
                     script {
                         name = "Copy files into a temporary location"
                         scriptContent = """
                             |#!/bin/bash
-                            | set -x
-                            | cp -R resources resources-sonar-temp
-                            | set +x
+                            |cp -R resources resources-sonar-temp
                         """.trimMargin()
                         workingDir = "."
                     }
@@ -32,14 +30,11 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
                         name = "Change dot files into non-dot files"
                         scriptContent = """
                             |#!/bin/bash
-                            | set -x
                             |for filename in $(ls -1a | grep "^\.[a-zA-Z0-9]"); do
                             |  if [ ! -d "${'$'}filename" ]; then
                             |      mv ${'$'}filename $(echo ${'$'}filename | sed 's/^.//')
                             |  fi
                             |done
-                            | set +x
-                            |ls -lha
                         """.trimMargin()
                         workingDir = "resources-sonar-temp"
                     }
