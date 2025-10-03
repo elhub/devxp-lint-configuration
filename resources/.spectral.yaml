@@ -1,3 +1,4 @@
+---
 extends:
   - spectral:asyncapi
   - spectral:oas
