@@ -55,6 +55,8 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
                     additionalParams =
                         mutableListOf(
                             "-Dsonar.scm.exclusions.disabled=true",
+                            "-Dsonar.lang.patterns.json=**/*.json,**/ecrc,**/jsonlintrc",
+                            "-Dsonar.lang.patterns.yaml=**/*.yaml,**/*.yml,**/ansible-lint",
                             "-X"
                         )
                     outputArtifactRules = listOf(
