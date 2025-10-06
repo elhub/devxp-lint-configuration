@@ -15,7 +15,7 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
                 outputArtifactRules = listOf(ArtifactRule.include("dotfiles.zip", "resources/dotfiles"))
             ) {
                 id("PrepareFilesForSonar")
-                name = "\uD83D\uDCC4 Prepare dotfiles for SonarScan"
+                name = "📃 Prepare dotfiles for SonarScan"
 
                 steps {
                     script {
