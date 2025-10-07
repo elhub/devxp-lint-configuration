@@ -13,11 +13,6 @@
     "IndentSize": false,
     "InsertFinalNewline": false,
     "TrimTrailingWhitespace": false,
-    "MaxLineLength": true
+    "MaxLineLength": false
   }
-}
-{
-    "exclude": [
-    "**/gradlew.bat"
-    ]
 }

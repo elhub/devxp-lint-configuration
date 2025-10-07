@@ -79,6 +79,14 @@ FILEIO_REPORTER: false
 PRE_COMMANDS:
   - command: 'curl https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -o ./.editorconfig'
     cwd: workspace
+EDITORCONFIG_PRE_COMMANDS:
+  [
+    command:
+      'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.editorconfig-checker.json
+      -o /tmp/.editorconfig-checker.json'
+  ]
+EDITORCONFIG_EDITORCONFIG_CHECKER_ARGUMENTS:
+  ['-config', '/tmp/.editorconfig-checker.json']
 
 # FLAKE8 configuration
 PYTHON_FLAKE8_PRE_COMMANDS:
