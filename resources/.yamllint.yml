@@ -1,15 +1,31 @@
 ---
 extends: default
 rules:
+  # Prevent using more than one set of entries in braces (prefer 'actual' yaml)
+  # https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.braces
   braces:
+    min-spaces-inside: 0
     max-spaces-inside: 1
+    min-spaces-inside-empty: 0
+    max-spaces-inside-empty: 1
+
   comments:
     # prettier compatibility
     min-spaces-from-content: 1
+
   comments-indentation: false
-  line-length:
-    max: 160
+
   octal-values:
     forbid-implicit-octal: true
     forbid-explicit-octal: true
-  truthy: disable
+  
+  # Ignore line length
+  line-length: disable
+
+  # Require a newline
+  # https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.new_line_at_end_of_file
+  new-line-at-end-of-file: enable
+
+  # Prevent trailing spaces (helps with changesets and inconsistencies)
+  # https://yamllint.readthedocs.io/en/stable/rules.html#module-yamllint.rules.trailing_spaces
+  trailing-spaces: enable
