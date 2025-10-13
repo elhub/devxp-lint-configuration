@@ -4,6 +4,7 @@ import no.elhub.devxp.build.configuration.pipeline.constants.AgentScope
 import no.elhub.devxp.build.configuration.pipeline.constants.Group.DEVXP
 import no.elhub.devxp.build.configuration.pipeline.dsl.PipelineScope
 import no.elhub.devxp.build.configuration.pipeline.dsl.elhubProject
+import no.elhub.devxp.build.configuration.pipeline.extensions.enablePrFeature
 import no.elhub.devxp.build.configuration.pipeline.jobs.VerifyArtifacts
 import no.elhub.devxp.build.configuration.pipeline.jobs.customJob
 import no.elhub.devxp.build.configuration.pipeline.jobs.makeVerify
@@ -58,6 +59,7 @@ fun PipelineScope.prepareDotfilesForSonarScan(): VerifyArtifacts = customJob(
 ) {
     id("PrepareFilesForSonar")
     name = "📃 Prepare dotfiles for SonarScan"
+    enablePrFeature()
 
     steps {
         script {
