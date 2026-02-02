@@ -147,3 +147,10 @@ JAVA_PMD_PRE_COMMANDS:
 
 API_SPECTRAL_FILE_NAMES_REGEX:
   - '^openapi\.yaml$'
+
+YAML_PRETTIER_PRE_COMMANDS:
+  [
+    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.prettierrc.json -o /tmp/.prettierrc.json'
+  ]
+YAML_PRETTIER_ARGUMENTS:
+  ['--config', '/tmp/.prettierrc.json']
