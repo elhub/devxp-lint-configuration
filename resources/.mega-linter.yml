@@ -133,6 +133,8 @@ KOTLIN_KTLINT_PRE_COMMANDS:
 KOTLIN_KTLINT_ARGUMENTS:
   ['--editorconfig=/tmp/.ktlint_editorconfig']
 
+JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '.github/renovate.json'
+
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
 JAVA_CHECKSTYLE_PRE_COMMANDS:
   [
