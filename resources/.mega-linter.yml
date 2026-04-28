@@ -62,9 +62,6 @@ ENABLE_LINTERS:
   - YAML_PRETTIER
   - YAML_YAMLLINT
 
-DISABLE_ERRORS_LINTERS:
-  - GO_GOLANGCI_LINT
-
 DISABLE:
   - SPELL # Uncomment to disable checks of spelling mistakes
 # - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
@@ -77,82 +74,89 @@ FILEIO_REPORTER: false
 
 # Ensure EditorConfig is up to date
 PRE_COMMANDS:
-  - command: 'curl https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template -o ./.editorconfig'
+  - command: >
+      curl https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template
+      -o ./.editorconfig
     cwd: workspace
+
 EDITORCONFIG_PRE_COMMANDS:
-  [
-    command:
-      'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.editorconfig-checker.json
-      -o /tmp/.editorconfig-checker.json'
-  ]
+  - command: >
+      curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.editorconfig-checker.json
+      -o /tmp/.editorconfig-checker.json
+
 EDITORCONFIG_EDITORCONFIG_CHECKER_ARGUMENTS:
-  ['-config', '/tmp/.editorconfig-checker.json']
+  - '-config'
+  - '/tmp/.editorconfig-checker.json'
 
 # FLAKE8 configuration
 PYTHON_FLAKE8_PRE_COMMANDS:
-  [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.flake8 -o /tmp/.flake8'
-  ]
+  - command: curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.flake8 -o /tmp/.flake8
 
-PYTHON_FLAKE8_ARGUMENTS: ['--config', '/tmp/.flake8']
+PYTHON_FLAKE8_ARGUMENTS:
+  - '--config'
+  - '/tmp/.flake8'
 
 PYTHON_PYLINT_PRE_COMMANDS:
-  [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.pylintrc -o /tmp/.pylintrc'
-  ]
+  - command: curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.pylintrc -o /tmp/.pylintrc
 
-PYTHON_PYLINT_ARGUMENTS: ['--rcfile', '/tmp/.pylintrc']
+PYTHON_PYLINT_ARGUMENTS:
+  - '--rcfile'
+  - '/tmp/.pylintrc'
 
 PYTHON_BLACK_PRE_COMMANDS:
-  [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/pyproject.toml -o /tmp/pyproject.toml'
-  ]
+  - command: curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/pyproject.toml -o /tmp/pyproject.toml
 
-PYTHON_BLACK_ARGUMENTS: ['--config', '/tmp/pyproject.toml']
+PYTHON_BLACK_ARGUMENTS:
+  - '--config'
+  - '/tmp/pyproject.toml'
 
 # GOLANGCI_LINT configuration
-GO_GOLANGCI_LINT_ARGUMENTS: ['run', './...']
+GO_GOLANGCI_LINT_ARGUMENTS:
+  - './...'
+
+GO_GOLANGCI_LINT_PRE_COMMANDS:
+  - command: >
+      curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/fix-and-migrate-go-config/resources/.golangci.yml
+      -o /tmp/lint/.golangci.yml
 
 # KOTLIN_DETEKT configuration
 KOTLIN_DETEKT_PRE_COMMANDS:
-  [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.detekt.yml -o /tmp/.detekt.yml'
-  ]
+  - command: >
+      curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.detekt.yml
+      -o /tmp/.detekt.yml
+
 KOTLIN_DETEKT_ARGUMENTS:
-  [
-    '--build-upon-default-config',
-    '--config',
-    '/tmp/.detekt.yml'
-  ]
+  - '--build-upon-default-config'
+  - '--config'
+  - '/tmp/.detekt.yml'
 
 KOTLIN_KTLINT_PRE_COMMANDS:
-  [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/refs/heads/main/resources/.ktlint_editorconfig -o /tmp/.ktlint_editorconfig'
-  ]
+  - command: >
+      curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/refs/heads/main/resources/.ktlint_editorconfig
+      -o /tmp/.ktlint_editorconfig
 
 KOTLIN_KTLINT_ARGUMENTS:
-  ['--editorconfig=/tmp/.ktlint_editorconfig']
+  - '--editorconfig=/tmp/.ktlint_editorconfig'
 
 JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '.github/renovate.json'
 
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
 JAVA_CHECKSTYLE_PRE_COMMANDS:
-  [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/checkstyle-config.xml -o /tmp/checkstyle-config.xml'
-  ]
+  - command: curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/checkstyle-config.xml -o /tmp/checkstyle-config.xml
+
 JAVA_CHECKSTYLE_ARGUMENTS: -c /tmp/checkstyle-config.xml
 
 JAVA_PMD_PRE_COMMANDS:
-  [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/java-pmd-ruleset.xml -o /tmp/java-pmd-ruleset.xml'
-  ]
+  - command: curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/java-pmd-ruleset.xml -o /tmp/java-pmd-ruleset.xml
 
 API_SPECTRAL_FILE_NAMES_REGEX:
   - '^openapi\.yaml$'
 
 YAML_PRETTIER_PRE_COMMANDS:
-  [
-    command: 'curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.prettierrc.json -o /tmp/.prettierrc.json'
-  ]
+  - command: curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.prettierrc.json -o /tmp/.prettierrc.json
+
 YAML_PRETTIER_ARGUMENTS:
-  ['--config', '/tmp/.prettierrc.json']
+  - '--config'
+  - '/tmp/.prettierrc.json'
+
+YAML_PRETTIER_FILTER_REGEX_EXCLUDE: '.devxp/compass.yaml'
