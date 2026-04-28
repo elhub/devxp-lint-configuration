@@ -116,7 +116,7 @@ GO_GOLANGCI_LINT_ARGUMENTS:
 
 GO_GOLANGCI_LINT_PRE_COMMANDS:
   - command: >
-      curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/fix-and-migrate-go-config/resources/.golangci.yml
+      curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.golangci.yml
       -o /tmp/lint/.golangci.yml
 
 # KOTLIN_DETEKT configuration
