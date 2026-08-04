@@ -138,6 +138,14 @@ KOTLIN_KTLINT_PRE_COMMANDS:
 KOTLIN_KTLINT_ARGUMENTS:
   - '--editorconfig=/tmp/.ktlint_editorconfig'
 
+# MARKDOWN_MARKDOWNLINT configuration
+MARKDOWN_MARKDOWNLINT_PRE_COMMANDS:
+  - command: curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.markdownlint.json -o /tmp/.markdownlint.json
+
+MARKDOWN_MARKDOWNLINT_ARGUMENTS:
+  - '--config'
+  - '/tmp/.markdownlint.json'
+
 JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '.github/renovate.json'
 
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
