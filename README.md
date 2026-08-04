@@ -2,7 +2,7 @@
 
 ## About
 
-This project contains configurations for development linting, suitable for use with [MegaLinter](https://github.com/oxsecurity/megalinter).
+This project contains linting configurations for development workflows, suitable for use with [MegaLinter](https://github.com/oxsecurity/megalinter).
 
 ## Contributing
 
