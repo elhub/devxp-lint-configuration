@@ -11,6 +11,11 @@ REPORT_OUTPUT_FOLDER: none # Set due to https://github.com/oxsecurity/megalinter
 # all, none, or list of linter keys
 APPLY_FIXES: none
 
+# needed to work around a bug that tries to reference .betterleaks.toml explicitly,
+# despite docs claiming this is not needed.
+# see https://megalinter.io/latest/descriptors/repository_betterleaks/
+REPOSITORY_BETTERLEAKS_FORWARD_EXCLUDED_DIRECTORIES: false
+
 # If you use ENABLE variable, all other languages/formats/tooling-formats will
 # be disabled by default
 # ENABLE:
@@ -45,8 +50,8 @@ ENABLE_LINTERS:
   - PYTHON_BLACK
   - PYTHON_FLAKE8
   - PYTHON_PYLINT
+  - REPOSITORY_BETTERLEAKS
   - REPOSITORY_GIT_DIFF
-  - REPOSITORY_GITLEAKS
   - REPOSITORY_SECRETLINT
   # - REPOSITORY_SEMGREP
   # - REPOSITORY_TRIVY
