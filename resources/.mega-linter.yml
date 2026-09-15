@@ -118,13 +118,13 @@ PYTHON_BLACK_ARGUMENTS:
 # GOLANGCI_LINT configuration
 GO_GOLANGCI_LINT_ARGUMENTS:
   - '--config'
-  - '/tmp/lint/.golangci.yml'
+  - '/tmp/.golangci.yml'
   - './...'
 
 GO_GOLANGCI_LINT_PRE_COMMANDS:
   - command: >
       curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.golangci.yml
-      -o /tmp/lint/.golangci.yml
+      -o /tmp/.golangci.yml
 
 # KOTLIN_DETEKT configuration
 KOTLIN_DETEKT_PRE_COMMANDS:
