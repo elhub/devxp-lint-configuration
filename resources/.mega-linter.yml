@@ -117,6 +117,8 @@ PYTHON_BLACK_ARGUMENTS:
 
 # GOLANGCI_LINT configuration
 GO_GOLANGCI_LINT_ARGUMENTS:
+  - '--config'
+  - '/tmp/lint/.golangci.yml'
   - './...'
 
 GO_GOLANGCI_LINT_PRE_COMMANDS:
