@@ -35,11 +35,10 @@ ENABLE_LINTERS:
   - HTML_HTMLHINT
   - JAVA_CHECKSTYLE
   - JAVA_PMD
-  - JAVASCRIPT_ES
-  - JAVASCRIPT_PRETTIER
-  - JAVASCRIPT_STANDARD
+  - JAVASCRIPT_BIOME
   - JSON_JSONLINT
   - JSON_PRETTIER
+  - JSX_BIOME
   - KOTLIN_DETEKT
   - KOTLIN_KTLINT
   - KUBERNETES_HELM
@@ -60,9 +59,8 @@ ENABLE_LINTERS:
   - TERRAFORM_TERRAGRUNT
   - TERRAFORM_TERRASCAN
   - TERRAFORM_TFLINT
-  - TYPESCRIPT_ES
-  - TYPESCRIPT_PRETTIER
-  - TYPESCRIPT_STANDARD
+  - TSX_BIOME
+  - TYPESCRIPT_BIOME
   - XML_XMLLINT
   - YAML_PRETTIER
   - YAML_YAMLLINT
@@ -83,6 +81,23 @@ PRE_COMMANDS:
       curl https://raw.githubusercontent.com/elhub/devxp-project-template/refs/heads/main/resources/.editorconfig-template
       -o ./.editorconfig
     cwd: workspace
+  # Biome activation requires a config before linters are initialized.
+  - command: >
+      curl --fail --silent --show-error --location
+      https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/biome.json
+      -o /tmp/biome.json
+    continue_if_failed: false
+
+# Activate Biome without a project config and enforce the shared rules.
+JAVASCRIPT_BIOME_RULES_PATH: /tmp
+JSX_BIOME_RULES_PATH: /tmp
+TSX_BIOME_RULES_PATH: /tmp
+TYPESCRIPT_BIOME_RULES_PATH: /tmp
+
+JAVASCRIPT_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
+JSX_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
+TSX_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
+TYPESCRIPT_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
 
 EDITORCONFIG_PRE_COMMANDS:
   - command: >
