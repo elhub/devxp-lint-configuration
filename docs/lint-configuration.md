@@ -20,3 +20,15 @@ falling afoul of this limit, you should probably reconsider how you write code.
 * The [markdown syntax](https://daringfireball.net/projects/markdown/syntax#list) clearly states that a list must be
   indented by 4 spaces. This rule is enforced by Python-Markdown, which is the rendering engine for MkDocs.
 * Maintaining a line length of 160 is generally not an issue in Markdown; the exception is when doing tables.
+
+### JavaScript and TypeScript
+
+MegaLinter uses Biome for JS, TS, JSX, and TSX, replacing the shared ESLint, Standard, and Prettier checks for these languages.
+Pipeline checks enforce `resources/biome.json`, ignoring project-local Biome and EditorConfig settings.
+Projects with their own `.mega-linter.yml` must extend the shared configuration to receive these checks.
+
+Shared rules: recommended lint rules, two-space indentation, LF endings, and a 160-column formatting target, consistent with shared EditorConfig.
+Use single quotes (double in JSX), optional semicolons, and trailing commas. Unused imports/variables, unnecessary `let`.
+Import sorting and automatic fixes are disabled.
+
+For editor integration, use a local copy of the shared config. Keep framework-specific linting and TypeScript type checking as separate checks where needed.
