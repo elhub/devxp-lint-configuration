@@ -115,7 +115,25 @@ PYTHON_BLACK_ARGUMENTS:
   - '--config'
   - '/tmp/pyproject.toml'
 
+PYTHON_RUFF_RULES_PATH: /tmp
+PYTHON_RUFF_CONFIG_FILE: ruff.toml
+
+PYTHON_RUFF_PRE_COMMANDS:
+  - command: >
+      curl --fail --silent --show-error --location
+      https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/ruff.toml
+      -o /tmp/ruff.toml
+    continue_if_failed: false
+
+PYTHON_MYPY_RULES_PATH: /tmp
 PYTHON_MYPY_CONFIG_FILE: mypy.ini
+
+PYTHON_MYPY_PRE_COMMANDS:
+  - command: >
+      curl --fail --silent --show-error --location
+      https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/mypy.ini
+      -o /tmp/mypy.ini
+    continue_if_failed: false
 
 # GOLANGCI_LINT configuration
 GO_GOLANGCI_LINT_ARGUMENTS:
