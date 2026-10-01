@@ -48,7 +48,6 @@ ENABLE_LINTERS:
   - POWERSHELL_POWERSHELL_FORMATTER
   - PYTHON_BLACK
   - PYTHON_RUFF
-  - PYTHON_MYPY
   - REPOSITORY_BETTERLEAKS
   - REPOSITORY_GIT_DIFF
   - REPOSITORY_SECRETLINT
@@ -94,10 +93,12 @@ JSX_BIOME_RULES_PATH: /tmp
 TSX_BIOME_RULES_PATH: /tmp
 TYPESCRIPT_BIOME_RULES_PATH: /tmp
 
-JAVASCRIPT_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
+JAVASCRIPT_BIOME_ARGUMENTS:
+  ['--config-path', '/tmp/biome.json']
 JSX_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
 TSX_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
-TYPESCRIPT_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
+TYPESCRIPT_BIOME_ARGUMENTS:
+  ['--config-path', '/tmp/biome.json']
 
 EDITORCONFIG_PRE_COMMANDS:
   - command: >
@@ -123,16 +124,6 @@ PYTHON_RUFF_PRE_COMMANDS:
       curl --fail --silent --show-error --location
       https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/ruff.toml
       -o /tmp/ruff.toml
-    continue_if_failed: false
-
-PYTHON_MYPY_RULES_PATH: /tmp
-PYTHON_MYPY_CONFIG_FILE: mypy.ini
-
-PYTHON_MYPY_PRE_COMMANDS:
-  - command: >
-      curl --fail --silent --show-error --location
-      https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/mypy.ini
-      -o /tmp/mypy.ini
     continue_if_failed: false
 
 # GOLANGCI_LINT configuration
