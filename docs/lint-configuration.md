@@ -32,3 +32,9 @@ Use single quotes (double in JSX), optional semicolons, and trailing commas. Unu
 Import sorting and automatic fixes are disabled.
 
 For editor integration, use a local copy of the shared config. Keep framework-specific linting and TypeScript type checking as separate checks where needed.
+
+### Terragrunt
+
+The Terragrunt check excludes `*.tpl.hcl` files because they are templates, not standalone HCL configurations.
+Template directives such as `%{ if ... }` must be rendered with Terraform's `templatefile()` before the resulting HCL can be validated.
+Other `.hcl` files remain eligible for the Terragrunt check, and other linters are unaffected by this exclusion.

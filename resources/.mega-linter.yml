@@ -170,6 +170,9 @@ MARKDOWN_MARKDOWNLINT_ARGUMENTS:
 
 JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '.github/renovate.json'
 
+# Policy templates must be rendered before they can be parsed as HCL.
+TERRAFORM_TERRAGRUNT_FILTER_REGEX_EXCLUDE: '\.tpl\.hcl$'
+
 # REPOSITORY_SEMGREP_RULESETS: ["p/default","p/owasp-top-ten"]
 JAVA_CHECKSTYLE_PRE_COMMANDS:
   - command: curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/checkstyle-config.xml -o /tmp/checkstyle-config.xml
