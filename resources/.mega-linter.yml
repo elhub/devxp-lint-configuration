@@ -88,6 +88,7 @@ PRE_COMMANDS:
         https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/biome.json
         -o ./.biome.json
       fi
+    cwd: workspace
     continue_if_failed: false
 
 # Activate Biome without a project config and enforce the shared rules.
