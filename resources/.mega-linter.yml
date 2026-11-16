@@ -84,8 +84,8 @@ PRE_COMMANDS:
   # Biome activation requires a config before linters are initialized.
   - command: >
       if [ -f package.json ]; then
-        curl --fail --silent --show-error --location
-        https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/biome.json
+        curl --fail --silent --show-error --location \
+        https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/biome.json \
         -o ./.biome.json
       fi
     cwd: workspace
