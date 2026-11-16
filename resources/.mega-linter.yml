@@ -83,21 +83,13 @@ PRE_COMMANDS:
     cwd: workspace
   # Biome activation requires a config before linters are initialized.
   - command: >
-      curl --fail --silent --show-error --location
-      https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/biome.json
-      -o /tmp/biome.json
+      if [ -f package.json ]; then
+        curl --fail --silent --show-error --location \
+        https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/biome.json \
+        -o ./biome.json
+      fi
+    cwd: workspace
     continue_if_failed: false
-
-# Activate Biome without a project config and enforce the shared rules.
-JAVASCRIPT_BIOME_RULES_PATH: /tmp
-JSX_BIOME_RULES_PATH: /tmp
-TSX_BIOME_RULES_PATH: /tmp
-TYPESCRIPT_BIOME_RULES_PATH: /tmp
-
-JAVASCRIPT_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
-JSX_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
-TSX_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
-TYPESCRIPT_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
 
 EDITORCONFIG_PRE_COMMANDS:
   - command: >
