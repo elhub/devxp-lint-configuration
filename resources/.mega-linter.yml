@@ -86,7 +86,7 @@ PRE_COMMANDS:
       if [ -f package.json ]; then
         curl --fail --silent --show-error --location \
         https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/biome.json \
-        -o ./.biome.json
+        -o ./biome.json
       fi
     cwd: workspace
     continue_if_failed: false
