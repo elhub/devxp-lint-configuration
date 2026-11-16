@@ -91,17 +91,6 @@ PRE_COMMANDS:
     cwd: workspace
     continue_if_failed: false
 
-# Activate Biome without a project config and enforce the shared rules.
-JAVASCRIPT_BIOME_RULES_PATH: /tmp
-JSX_BIOME_RULES_PATH: /tmp
-TSX_BIOME_RULES_PATH: /tmp
-TYPESCRIPT_BIOME_RULES_PATH: /tmp
-
-JAVASCRIPT_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
-JSX_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
-TSX_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
-TYPESCRIPT_BIOME_ARGUMENTS: ['--config-path', '/tmp/biome.json']
-
 EDITORCONFIG_PRE_COMMANDS:
   - command: >
       curl https://raw.githubusercontent.com/elhub/devxp-lint-configuration/main/resources/.editorconfig-checker.json
