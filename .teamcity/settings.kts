@@ -35,10 +35,6 @@ elhubProject(DEVXP, "devxp-lint-configuration") {
                         )
                     )
                 }
-                enablePublishMetrics = true
-                publishMetricsSettings = {
-                    skipCodeCoverage = true
-                }
             }.apply {
                 this.buildType.dependencies {
                     artifacts(buildTypeId = prepareDotfilesForSonarScanJob.id) {
