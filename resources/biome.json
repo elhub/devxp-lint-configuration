@@ -10,6 +10,10 @@
   },
   "linter": {
     "enabled": true,
+    "domains": {
+      "react": "recommended",
+      "playwright": "recommended"
+    },
     "rules": {
       "recommended": true,
       "correctness": {
@@ -17,10 +21,21 @@
         "noUnusedVariables": "error"
       },
       "style": {
-        "useConst": "error"
+        "useConst": "error",
+        "useReactFunctionComponents": "error",
+        "noCommonJs": "error",
+        "noDefaultExport": "error",
+        "noEnum": "error",
+        "noMagicNumbers": "error",
+        "useAsConstAssertion": "error"
       },
       "suspicious": {
-        "noFocusedTests": "error"
+        "noFocusedTests": "error",
+        "noExplicitAny": "error"
+      },
+      "complexity": {
+        "useArrowFunction": "error",
+        "noUselessTypeConstraint": "error"
       }
     }
   },
@@ -35,5 +50,16 @@
       "trailingCommas": "all",
       "arrowParentheses": "always"
     }
+  },
+  "html": {
+    "formatter": {
+      "enabled": true,
+      "selfCloseVoidElements": "always"
+    }
+  },
+  "vcs": {
+    "clientKind": "git",
+    "enabled": true,
+    "useIgnoreFile": true
   }
 }
